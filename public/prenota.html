@@ -22,9 +22,15 @@
         <meta property="og:type" content="website" />
 
         <!-- FONTS -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            @font-face {
+                font-family: 'Guaruja Grotesk';
+                src: url('./assets/tipogra-fio-guaruja-grotesk-regular.otf') format('opentype');
+                font-weight: normal;
+                font-style: normal;
+                font-display: swap;
+            }
+        </style>
         
         <!-- CSS E RISORSE -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -40,14 +46,18 @@
                             'domora-green': '#28514c'
                         },
                         fontFamily: {
-                            'display': ['Playfair Display', 'serif'],
-                            'sans': ['Inter', 'system-ui', 'sans-serif'],
+                            'display': ['Guaruja Grotesk', 'serif'],
+                            'sans': ['Guaruja Grotesk', 'system-ui', 'sans-serif'],
                         }
                     }
                 }
             }
         </script>
-        <link rel="icon" href="./assets/favicon.png" type="image/x-icon" />
+        
+        <!-- FAVICON -->
+        <link rel="icon" href="./assets/Domora_Logo_Color_Vertical.png" type="image/png" />
+        <link rel="apple-touch-icon" href="./assets/Domora_Logo_Color_Vertical.png" />
+        <link rel="shortcut icon" href="./assets/Domora_Logo_Color_Vertical.png" type="image/png" />
 
     </head>
     <body class="bg-domora-gray text-domora-dark font-sans">
@@ -173,7 +183,7 @@
                                 Raccontaci il tuo progetto immobiliare
                             </label>
                             <textarea id="messaggio" name="messaggio" rows="5" 
-                                placeholder="Descrivi le tue esigenze, tempistiche e qualsiasi altra informazione utile..."
+                                placeholder="Parlaci del tuo sogno abitativo: esigenze, tempistiche e aspettative. Siamo qui per ascoltarti."
                                 class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-colors"></textarea>
                         </div>
 

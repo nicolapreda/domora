@@ -95,9 +95,15 @@
         </script>
 
         <!-- FONTS -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            @font-face {
+                font-family: 'Guaruja Grotesk';
+                src: url('./assets/tipogra-fio-guaruja-grotesk-regular.otf') format('opentype');
+                font-weight: normal;
+                font-style: normal;
+                font-display: swap;
+            }
+        </style>
         
         <!-- CSS E RISORSE -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -115,15 +121,18 @@
                             'domora-secondary': '#8E8E8E'
                         },
                         fontFamily: {
-                            'display': ['Guaruja Grotesk', 'Playfair Display', 'serif'],
-                            'sans': ['Guaruja Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+                            'display': ['Guaruja Grotesk', 'serif'],
+                            'sans': ['Guaruja Grotesk', 'system-ui', 'sans-serif'],
                         }
                     }
                 }
             }
         </script>
-        <link rel="icon" href="./assets/favicon.png" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="./assets/favicon.png" />
+        
+        <!-- FAVICON -->
+        <link rel="icon" href="./assets/Domora_Logo_Color_Vertical.png" type="image/png" />
+        <link rel="apple-touch-icon" href="./assets/Domora_Logo_Color_Vertical.png" />
+        <link rel="shortcut icon" href="./assets/Domora_Logo_Color_Vertical.png" type="image/png" />
 
     </head>
     <body class="bg-domora-gray text-domora-dark font-sans">
@@ -252,8 +261,8 @@
                             Acquisto immobili all'asta
                         </h3>
                         <p class="text-domora-secondary">
-                            Ti guidiamo attraverso ogni fase del processo di acquisto all'asta, 
-                            dalla ricerca alla valutazione, fino alla partecipazione.
+                            Ti accompagniamo con competenza e chiarezza in ogni fase dell'acquisto all'asta, 
+                            dalla prima valutazione fino alla chiusura dell'operazione.
                         </p>
                     </div>
 
@@ -268,8 +277,8 @@
                             Assistenza legale e notarile
                         </h3>
                         <p class="text-domora-secondary">
-                            Il nostro team di esperti legali ti assiste in tutti gli aspetti 
-                            burocratici e contrattuali, garantendo la massima sicurezza.
+                            Ti affianchiamo con competenza in tutti gli aspetti 
+                            legali e contrattuali, assicurando trasparenza e sicurezza.
                         </p>
                     </div>
 
@@ -284,8 +293,8 @@
                             Consulenza fiscale e burocratica
                         </h3>
                         <p class="text-domora-secondary">
-                            Ti supportiamo nella gestione degli aspetti fiscali e burocratici, 
-                            ottimizzando i costi e semplificando le procedure.
+                            Ti supportiamo nella gestione degli aspetti fiscali e amministrativi, 
+                            semplificando ogni passaggio e ottimizzando le opportunità.
                         </p>
                     </div>
                 </div>
@@ -540,7 +549,7 @@
                             <label for="messaggio" class="block text-sm font-medium text-domora-dark mb-2">
                                 Messaggio
                             </label>
-                            <textarea id="messaggio" name="messaggio" rows="5" placeholder="Raccontaci il tuo progetto immobiliare..."
+                            <textarea id="messaggio" name="messaggio" rows="5" placeholder="Raccontaci il tuo sogno abitativo. Siamo qui per ascoltarti."
                                 class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-colors"></textarea>
                         </div>
 
