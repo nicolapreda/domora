@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- TITLE E META DESCRIPTION OTTIMIZZATI -->
+        <title>Domora Immobiliare - A un passo dai tuoi sogni | Aste Immobiliari</title>
+        <meta name="description"
+            content="Il modo più sicuro e trasparente per comprare casa, anche all'asta. Ti accompagniamo in ogni fase con chiarezza, esperienza e umanità." />
+        <meta name="keywords"
+            content="immobile all'asta, consulenza immobiliare, assistenza notarile, comprare casa in sicurezza, aste immobiliari, domora immobiliare" />
+
+        <!-- META ROBOT E CANONICAL -->
+        <meta name="robots"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <link rel="canonical" href="https://www.domoraimmobiliare.it/" />
+
+        <!-- AUTHOR E PUBLISHER -->
+        <meta name="author" content="Domora Immobiliare" />
+        <meta name="publisher" content="Domora Immobiliare" />
+
+        <!-- GEO TARGETING -->
+        <meta name="geo.region" content="IT" />
+        <meta name="geo.placename" content="Italia" />
+        <meta name="language" content="Italian" />
+
+        <!-- OPEN GRAPH OTTIMIZZATO -->
+        <meta property="og:locale" content="it_IT" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title"
+            content="Domora Immobiliare - A un passo dai tuoi sogni" />
+        <meta property="og:description"
+            content="Il modo più sicuro e trasparente per comprare casa, anche all'asta. Ti accompagniamo in ogni fase con chiarezza, esperienza e umanità." />
+        <meta property="og:url" content="https://www.domoraimmobiliare.it/" />
+        <meta property="og:site_name" content="Domora Immobiliare" />
+        <meta property="og:image"
+            content="https://www.domoraimmobiliare.it/assets/logo.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt"
+            content="Domora Immobiliare - A un passo dai tuoi sogni" />
+
+        <!-- TWITTER CARDS -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title"
+            content="Domora Immobiliare - A un passo dai tuoi sogni" />
+        <meta name="twitter:description"
+            content="Il modo più sicuro e trasparente per comprare casa, anche all'asta. Consulenza gratuita disponibile." />
+        <meta name="twitter:image"
+            content="https://www.domoraimmobiliare.it/assets/logo.png" />
+
+        <!-- SCHEMA.ORG STRUCTURED DATA -->
+                <!-- SCHEMA.ORG STRUCTURED DATA -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "RealEstateAgent",
+            "name": "Domora Immobiliare",
+            "description": "Agenzia immobiliare specializzata in aste immobiliari e consulenza completa per l'acquisto di immobili",
+            "url": "https://www.domoraimmobiliare.it",
+            "logo": "https://www.domoraimmobiliare.it/assets/logo.png",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "areaServed": "IT",
+                "availableLanguage": "Italian"
+            },
+            "serviceType": ["Aste Immobiliari", "Consulenza Acquisto Immobili", "Assistenza Legale Immobiliare"],
+            "areaServed": {
+                "@type": "Country",
+                "name": "Italia"
+            }
+        }
+        </script>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Consulenza Gratuita Aste Immobiliari",
+            "description": "Consulenza gratuita per l'acquisto di immobili all'asta, assistenza legale completa e ricerca immobili",
+            "provider": {
+                "@type": "RealEstateAgent",
+                "name": "Domora Immobiliare"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "EUR",
+                "description": "Consulenza gratuita"
+            },
+            "areaServed": "IT",
+            "serviceType": "Real Estate Consultation"
+        }
+        </script>
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- CSS E RISORSE -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'domora-gray': '#F5F5F5',
+                            'domora-dark': '#000000',
+                            'domora-secondary': '#8E8E8E',
+                            'domora-white': '#FFFFFF',
+                            'domora-accent': '#DA1793'
+                        },
+                        fontFamily: {
+                            'display': ['Playfair Display', 'serif'],
+                            'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        </script>
+        <link rel="icon" href="./assets/favicon.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="./assets/favicon.png" />
+
+    </head>
+    <body class="bg-domora-gray text-domora-dark font-sans">
+
+        <!-- NAVBAR -->
+        <nav class="bg-domora-white shadow-sm sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <img src="./assets/logo.png"
+                            alt="Domora Immobiliare Logo"
+                            class="h-8 w-auto" />
+                    </div>
+
+                    <!-- Menu desktop -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#servizi"
+                            class="text-domora-secondary hover:text-domora-dark font-medium transition-colors">
+                            Servizi
+                        </a>
+                        <a href="#testimonianze"
+                            class="text-domora-secondary hover:text-domora-dark font-medium transition-colors">
+                            Testimonianze
+                        </a>
+                        <a href="#faq"
+                            class="text-domora-secondary hover:text-domora-dark font-medium transition-colors">
+                            FAQ
+                        </a>
+                        <a href="#contatti"
+                            class="bg-domora-accent text-domora-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">
+                            Contatti
+                        </a>
+                    </div>
+
+                    <!-- Menu mobile button -->
+                    <div class="md:hidden">
+                        <button onclick="toggleMobileMenu()"
+                            class="text-domora-secondary hover:text-domora-dark focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Menu mobile -->
+                <div class="md:hidden hidden" id="mobileMenu">
+                    <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-200">
+                        <a href="#servizi"
+                            class="block px-3 py-2 text-domora-secondary hover:text-domora-dark transition-colors">
+                            Servizi
+                        </a>
+                        <a href="#testimonianze"
+                            class="block px-3 py-2 text-domora-secondary hover:text-domora-dark transition-colors">
+                            Testimonianze
+                        </a>
+                        <a href="#faq"
+                            class="block px-3 py-2 text-domora-secondary hover:text-domora-dark transition-colors">
+                            FAQ
+                        </a>
+                        <a href="#contatti"
+                            class="block mx-3 mt-3 bg-domora-accent text-domora-white px-6 py-2 rounded-md text-center transition-colors">
+                            Contatti
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 1. HERO SECTION -->
+        <section class="py-16 px-4 bg-domora-gray">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Contenuto -->
+                    <div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-domora-dark mb-6 leading-tight">
+                            A un passo dai tuoi sogni.
+                        </h1>
+                        <p class="text-xl md:text-2xl text-domora-secondary mb-8 leading-relaxed">
+                            Il modo più sicuro e trasparente per comprare casa, anche all'asta.
+                            Ti accompagniamo in ogni fase con chiarezza, esperienza e umanità.
+                        </p>
+                        <a href="#contatti"
+                            class="inline-block bg-domora-accent text-domora-white font-semibold px-8 py-4 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 text-lg">
+                            Prenota una consulenza gratuita
+                        </a>
+                    </div>
+                    
+                    <!-- Immagine -->
+                    <div class="lg:order-last">
+                        <div class="relative">
+                            <div class="aspect-w-4 aspect-h-3 bg-gray-200 rounded-lg overflow-hidden">
+                                <!-- Placeholder per immagine immobile moderno -->
+                                <div class="bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center">
+                                    <div class="text-center text-domora-secondary">
+                                        <svg class="mx-auto h-16 w-16 mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                                        </svg>
+                                        <p class="text-sm">Immagine immobile moderno</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. COSA FACCIAMO -->
+        <section id="servizi" class="py-20 px-4 bg-domora-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-domora-dark mb-6">
+                        Zero chiacchiere, solo fatti.
+                    </h2>
+                    <p class="text-xl text-domora-secondary max-w-3xl mx-auto">
+                        Domora non vende case. Risolve problemi.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Servizio 1 -->
+                    <div class="text-center p-8 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-domora-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-domora-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.84L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-display font-semibold text-domora-dark mb-4">
+                            Acquisto immobili all'asta
+                        </h3>
+                        <p class="text-domora-secondary">
+                            Ti guidiamo attraverso ogni fase del processo di acquisto all'asta, 
+                            dalla ricerca alla valutazione, fino alla partecipazione.
+                        </p>
+                    </div>
+
+                    <!-- Servizio 2 -->
+                    <div class="text-center p-8 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-domora-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-domora-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-display font-semibold text-domora-dark mb-4">
+                            Assistenza legale e notarile
+                        </h3>
+                        <p class="text-domora-secondary">
+                            Il nostro team di esperti legali ti assiste in tutti gli aspetti 
+                            burocratici e contrattuali, garantendo la massima sicurezza.
+                        </p>
+                    </div>
+
+                    <!-- Servizio 3 -->
+                    <div class="text-center p-8 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow">
+                        <div class="w-16 h-16 bg-domora-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-domora-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-display font-semibold text-domora-dark mb-4">
+                            Consulenza fiscale e burocratica
+                        </h3>
+                        <p class="text-domora-secondary">
+                            Ti supportiamo nella gestione degli aspetti fiscali e burocratici, 
+                            ottimizzando i costi e semplificando le procedure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TESTIMONIANZE -->
+        <section id="testimonianze" class="py-20 px-4 bg-domora-gray">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-domora-dark mb-6">
+                        Le parole dei nostri clienti
+                    </h2>
+                    <p class="text-xl text-domora-secondary">
+                        Quando la professionalità incontra l'umanità, nascono relazioni che durano nel tempo.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Testimonianza 1 -->
+                    <div class="bg-domora-white p-8 rounded-lg shadow-sm">
+                        <div class="mb-6">
+                            <svg class="w-8 h-8 text-domora-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <blockquote class="text-domora-dark mb-6 italic">
+                            "Zero chiacchiere, solo fatti"
+                        </blockquote>
+                        <div class="text-sm">
+                            <div class="font-semibold text-domora-dark">Aurora G.</div>
+                            <div class="text-domora-secondary">Cliente soddisfatta</div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonianza 2 -->
+                    <div class="bg-domora-white p-8 rounded-lg shadow-sm">
+                        <div class="mb-6">
+                            <svg class="w-8 h-8 text-domora-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <blockquote class="text-domora-dark mb-6 italic">
+                            "Ci hanno preso per mano"
+                        </blockquote>
+                        <div class="text-sm">
+                            <div class="font-semibold text-domora-dark">Mario S.</div>
+                            <div class="text-domora-secondary">Cliente soddisfatto</div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonianza 3 -->
+                    <div class="bg-domora-white p-8 rounded-lg shadow-sm">
+                        <div class="mb-6">
+                            <svg class="w-8 h-8 text-domora-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <blockquote class="text-domora-dark mb-6 italic">
+                            "Gente seria, finalmente!"
+                        </blockquote>
+                        <div class="text-sm">
+                            <div class="font-semibold text-domora-dark">Aldo F.</div>
+                            <div class="text-domora-secondary">Cliente soddisfatto</div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonianza 4 -->
+                    <div class="bg-domora-white p-8 rounded-lg shadow-sm">
+                        <div class="mb-6">
+                            <svg class="w-8 h-8 text-domora-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <blockquote class="text-domora-dark mb-6 italic">
+                            "Ho fatto un vero affare!"
+                        </blockquote>
+                        <div class="text-sm">
+                            <div class="font-semibold text-domora-dark">Dario A.</div>
+                            <div class="text-domora-secondary">Cliente soddisfatto</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FAQ -->
+        <section id="faq" class="py-20 px-4 bg-domora-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-domora-dark mb-6">
+                        Che rischi ci sono nell'acquisto all'asta?
+                    </h2>
+                    <p class="text-xl text-domora-secondary">
+                        Le domande più frequenti dei nostri clienti, con risposte chiare e rassicuranti.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- FAQ 1 -->
+                    <div class="border border-gray-200 rounded-lg">
+                        <button
+                            class="w-full px-6 py-4 text-left focus:outline-none"
+                            onclick="toggleAccordion('faq1')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-domora-dark">
+                                    È sicuro comprare una casa all'asta?
+                                </h3>
+                                <svg class="w-5 h-5 text-domora-secondary transform transition-transform" id="icon-faq1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-4" id="faq1">
+                            <p class="text-domora-secondary">
+                                Assolutamente sì, se ti fai accompagnare da professionisti esperti. 
+                                Domora si occupa di verificare tutti gli aspetti legali, urbanistici e 
+                                fiscali prima di ogni partecipazione, garantendoti la massima sicurezza.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="border border-gray-200 rounded-lg">
+                        <button
+                            class="w-full px-6 py-4 text-left focus:outline-none"
+                            onclick="toggleAccordion('faq2')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-domora-dark">
+                                    Quali documenti devo preparare?
+                                </h3>
+                                <svg class="w-5 h-5 text-domora-secondary transform transition-transform" id="icon-faq2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-4" id="faq2">
+                            <p class="text-domora-secondary">
+                                Non preoccuparti della burocrazia: ci pensiamo noi. Ti guideremo 
+                                nella preparazione di tutti i documenti necessari e ci occuperemo 
+                                di ogni aspetto amministrativo per te.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="border border-gray-200 rounded-lg">
+                        <button
+                            class="w-full px-6 py-4 text-left focus:outline-none"
+                            onclick="toggleAccordion('faq3')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-domora-dark">
+                                    Quanto posso risparmiare comprando all'asta?
+                                </h3>
+                                <svg class="w-5 h-5 text-domora-secondary transform transition-transform" id="icon-faq3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-4" id="faq3">
+                            <p class="text-domora-secondary">
+                                I risparmi variano caso per caso, ma generalmente si aggirano 
+                                tra il 20% e il 40% rispetto al prezzo di mercato. Il nostro 
+                                team valuta sempre il rapporto qualità-prezzo per garantirti 
+                                il miglior investimento.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="border border-gray-200 rounded-lg">
+                        <button
+                            class="w-full px-6 py-4 text-left focus:outline-none"
+                            onclick="toggleAccordion('faq4')">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-domora-dark">
+                                    Cosa succede se non vinco l'asta?
+                                </h3>
+                                <svg class="w-5 h-5 text-domora-secondary transform transition-transform" id="icon-faq4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="hidden px-6 pb-4" id="faq4">
+                            <p class="text-domora-secondary">
+                                Nessun problema. Ti proporremo immediatamente altre opportunità 
+                                che corrispondono ai tuoi criteri. Il nostro database è sempre 
+                                aggiornato con le migliori occasioni sul mercato.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CALL TO ACTION FINALE -->
+        <section id="contatti" class="py-20 px-4 bg-domora-gray">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-domora-dark mb-6">
+                        Parliamone, senza impegno.
+                    </h2>
+                    <p class="text-xl text-domora-secondary">
+                        Ogni casa ha una storia. La tua può iniziare oggi.
+                    </p>
+                </div>
+
+                <div class="bg-domora-white rounded-lg shadow-sm p-8">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nome" class="block text-sm font-medium text-domora-dark mb-2">
+                                    Nome *
+                                </label>
+                                <input type="text" id="nome" name="nome" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-accent focus:border-domora-accent transition-colors">
+                            </div>
+                            <div>
+                                <label for="cognome" class="block text-sm font-medium text-domora-dark mb-2">
+                                    Cognome *
+                                </label>
+                                <input type="text" id="cognome" name="cognome" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-accent focus:border-domora-accent transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-domora-dark mb-2">
+                                    Email *
+                                </label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-accent focus:border-domora-accent transition-colors">
+                            </div>
+                            <div>
+                                <label for="telefono" class="block text-sm font-medium text-domora-dark mb-2">
+                                    Telefono *
+                                </label>
+                                <input type="tel" id="telefono" name="telefono" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-accent focus:border-domora-accent transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="messaggio" class="block text-sm font-medium text-domora-dark mb-2">
+                                Messaggio
+                            </label>
+                            <textarea id="messaggio" name="messaggio" rows="5" placeholder="Raccontaci il tuo progetto immobiliare..."
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-accent focus:border-domora-accent transition-colors"></textarea>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="privacy" name="privacy" type="checkbox" required
+                                    class="w-4 h-4 text-domora-accent border-gray-300 rounded focus:ring-domora-accent">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="privacy" class="text-domora-secondary">
+                                    Accetto la <a href="./privacy-policy.html" class="text-domora-accent hover:underline">Privacy Policy</a> 
+                                    e autorizzo il trattamento dei miei dati personali *
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit"
+                                class="bg-domora-accent text-domora-white font-semibold px-8 py-4 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 text-lg">
+                                INVIA
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-domora-dark text-domora-white py-12 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Info azienda -->
+                    <div>
+                        <img src="./assets/logo.png" alt="Domora Immobiliare" class="h-8 w-auto mb-4 filter brightness-0 invert">
+                        <p class="text-gray-300 mb-4">
+                            Il modo più sicuro e trasparente per comprare casa, anche all'asta.
+                        </p>
+                    </div>
+
+                    <!-- Link utili -->
+                    <div>
+                        <h3 class="font-semibold mb-4">Link Utili</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#servizi" class="text-gray-300 hover:text-domora-white transition-colors">Servizi</a></li>
+                            <li><a href="#testimonianze" class="text-gray-300 hover:text-domora-white transition-colors">Testimonianze</a></li>
+                            <li><a href="#faq" class="text-gray-300 hover:text-domora-white transition-colors">FAQ</a></li>
+                            <li><a href="./privacy-policy.html" class="text-gray-300 hover:text-domora-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="./cookie-policy.html" class="text-gray-300 hover:text-domora-white transition-colors">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contatti -->
+                    <div>
+                        <h3 class="font-semibold mb-4">Contatti</h3>
+                        <div class="space-y-2 text-gray-300">
+                            <p>info@domoraimmobiliare.it</p>
+                            <p>+39 XXX XXX XXXX</p>
+                            <p>Via Example, 123<br>00100 Roma (RM)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                    <p>&copy; <span id="currentYear"></span> Domora Immobiliare. Tutti i diritti riservati.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script>
+            // Mobile menu toggle
+            function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.toggle('hidden');
+            }
+
+            // FAQ accordion
+            function toggleAccordion(id) {
+                const content = document.getElementById(id);
+                const icon = document.getElementById('icon-' + id);
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                } else {
+                    content.classList.add('hidden');
+                    icon.classList.remove('rotate-180');
+                }
+            }
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Chiudi menu mobile se aperto
+                        const mobileMenu = document.getElementById('mobileMenu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+
+            // Anno corrente nel footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        </script>
+
+    </body>
+</html>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Consulenza Gratuita Aste Immobiliari",
+            "description": "Consulenza gratuita per l'acquisto di immobili all'asta, assistenza legale completa e ricerca immobili",
+            "provider": {
+                "@type": "RealEstateAgent",
+                "name": "Domora Immobiliare"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "EUR",
+                "description": "Consulenza gratuita"
+            },
+            "areaServed": "IT",
+            "serviceType": "Real Estate Consultation"
+        }
+        </script>
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- CSS E RISORSE -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" href="./assets/favicon.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="./assets/favicon.png" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+        <!-- PRELOAD CRITICAL RESOURCES -->
+        <link rel="preload" href="./assets/style.css" as="style" />
+
+        <!-- Meta Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1271585887977769');
+        fbq('track', 'PageView');
+        
+        // Eventi specifici per funnel analisi settoriale
+        fbq('track', 'ViewContent', {
+            content_name: 'Analisi Settoriale Landing',
+            content_category: 'Verifica Parametri',
+            content_type: 'landing_page'
+        });
+        
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id=1271585887977769&ev=PageView&noscript=1" /></noscript>
+        <!-- End Meta Pixel Code -->
+
+        <!-- Google tag (gtag.js) -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-RHPNX0PHT2"></script>
+        <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RHPNX0PHT2');
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RHPNX0PHT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RHPNX0PHT2');
+</script>
+
+    </head>
+    <body class="font-sans text-white">
+
+
+        <!-- JavaScript per l'accordion Q&A e funzionalità avanzate -->
+        <script>
+            function toggleAccordion(id) {
+                const content = document.getElementById(id);
+                const icon = document.getElementById('icon-' + id);
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                } else {
+                    content.classList.add('hidden');
+                    icon.classList.remove('rotate-180');
+                }
+            }
+
+            // Funzione per toggle menu mobile
+            function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                const menuIcon = document.getElementById('menuIcon');
+                
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            }
+
+            // Scroll tracking per CTA multiple
+            function setupScrollTracking() {
+                let ctaShown = false;
+                const heroSection = document.querySelector('section');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting && !ctaShown) {
+                            // L'utente ha scrollato oltre l'hero - potrebbe mostrare CTA sticky
+                            ctaShown = true;
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                if (heroSection) {
+                    observer.observe(heroSection);
+                }
+            }
+
+            // Tracking eventi per Meta Pixel
+            function trackEvent(eventName, parameters = {}) {
+                // Facebook Pixel tracking
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', eventName, parameters);
+                }
+                
+                // Console log per debug
+                console.log('Event tracked:', eventName, parameters);
+            }
+
+            // Smooth scrolling per i link interni
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Chiudi menu mobile se aperto
+                        const mobileMenu = document.getElementById('mobileMenu');
+                        const menuIcon = document.getElementById('menuIcon');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            menuIcon.classList.remove('fa-times');
+                            menuIcon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            });
+
+            // Tracking click sui CTA
+            document.querySelectorAll('a[href="./prenota.html"]').forEach(cta => {
+                cta.addEventListener('click', function() {
+                    trackEvent('Lead', {
+                        content_name: 'Verifica Gratuita',
+                        content_category: 'CTA Click',
+                    });
+                });
+            });
+
+            // Inizializzazione quando il DOM è pronto
+            document.addEventListener('DOMContentLoaded', function() {
+                setupScrollTracking();
+                
+                // Track page view
+                trackEvent('PageView', {
+                    content_name: 'Landing',
+                    content_category: 'Landing Page'
+                });
+            });
+
+            // Track scroll depth per ottimizzazione
+            let maxScrollDepth = 0;
+            window.addEventListener('scroll', function() {
+                const scrollPercentage = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+                if (scrollPercentage > maxScrollDepth) {
+                    maxScrollDepth = scrollPercentage;
+                    
+                    // Track milestone di scroll
+                    if ([25, 50, 75, 90].includes(scrollPercentage)) {
+                        trackEvent('ScrollDepth', {
+                            scroll_depth: scrollPercentage,
+                            content_name: 'Landing Verifica'
+                        });
+                    }
+                }
+            });
+
+        </script>
+
+    </body>
+</html>
