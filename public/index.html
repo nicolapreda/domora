@@ -137,99 +137,218 @@
     </head>
     <body class="bg-domora-gray text-domora-dark font-sans">
 
-        <!-- NAVBAR -->
-        <nav class="bg-domora-white shadow-sm sticky top-0 z-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <!-- Logo -->
-                    <div class="flex items-center">
-                        <img src="./assets/Domora_Logo_Color_Horizontal.png"
-                            alt="Domora Immobiliare Logo"
-                            class="h-8 w-auto" />
-                    </div>
+        <!-- NAVBAR GLASSMORPHISM -->
+        <nav class="fixed top-0 left-0 right-0 z-50 p-4" id="navbar">
+            <div class="max-w-7xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg" id="navbarContainer">
+                    <div class="px-6 lg:px-8">
+                        <div class="flex justify-between items-center h-16">
+                            <!-- Logo -->
+                            <div class="flex items-center">
+                                <img src="./assets/Domora_Logo_White_Horizontal.png"
+                                    alt="Domora Immobiliare Logo"
+                                    class="h-8 w-auto" id="navbarLogo" />
+                            </div>
 
-                    <!-- Menu desktop -->
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a href="#servizi"
-                            class="text-domora-secondary hover:text-domora-dark font-medium transition-colors">
-                            Servizi
-                        </a>
-                        <a href="#testimonianze"
-                            class="text-domora-secondary hover:text-domora-dark font-medium transition-colors">
-                            Testimonianze
-                        </a>
-                        <a href="#faq"
-                            class="text-domora-secondary hover:text-domora-dark font-medium transition-colors">
-                            FAQ
-                        </a>
-                        <a href="#contatti"
-                            class="bg-domora-cyan text-domora-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">
-                            Contatti
-                        </a>
-                    </div>
+                            <!-- Menu desktop -->
+                            <div class="hidden md:flex items-center space-x-8" id="desktopMenu">
+                                <a href="#servizi"
+                                    class="text-white/90 hover:text-white font-medium transition-all duration-300 relative group">
+                                    Servizi
+                                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                                <a href="#testimonianze"
+                                    class="text-white/90 hover:text-white font-medium transition-all duration-300 relative group">
+                                    Testimonianze
+                                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                                <a href="#faq"
+                                    class="text-white/90 hover:text-white font-medium transition-all duration-300 relative group">
+                                    FAQ
+                                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                                <a href="#contatti"
+                                    class="bg-white/20 backdrop-blur-sm text-white px-6 py-2.5 rounded-xl hover:bg-white/30 transition-all duration-300 font-medium border border-white/30 hover:scale-105">
+                                    Contatti
+                                </a>
+                            </div>
 
-                    <!-- Menu mobile button -->
-                    <div class="md:hidden">
-                        <button onclick="toggleMobileMenu()"
-                            class="text-domora-secondary hover:text-domora-dark focus:outline-none">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                            <!-- Menu mobile button -->
+                            <div class="md:hidden">
+                                <button onclick="toggleMobileMenu()" id="mobileMenuButton"
+                                    class="text-white/90 hover:text-white focus:outline-none p-2 rounded-lg hover:bg-white/10 transition-all duration-300">
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
 
-                <!-- Menu mobile -->
-                <div class="md:hidden hidden" id="mobileMenu">
-                    <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-200">
-                        <a href="#servizi"
-                            class="block px-3 py-2 text-domora-secondary hover:text-domora-dark transition-colors">
-                            Servizi
-                        </a>
-                        <a href="#testimonianze"
-                            class="block px-3 py-2 text-domora-secondary hover:text-domora-dark transition-colors">
-                            Testimonianze
-                        </a>
-                        <a href="#faq"
-                            class="block px-3 py-2 text-domora-secondary hover:text-domora-dark transition-colors">
-                            FAQ
-                        </a>
-                        <a href="#contatti"
-                            class="block mx-3 mt-3 bg-domora-cyan text-domora-white px-6 py-2 rounded-md text-center transition-colors">
-                            Contatti
-                        </a>
+                        <!-- Menu mobile -->
+                        <div class="md:hidden hidden" id="mobileMenu">
+                            <div class="border-t border-white/20 mt-4 pt-4 pb-4 space-y-2">
+                                <a href="#servizi"
+                                    class="block px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-300">
+                                    Servizi
+                                </a>
+                                <a href="#testimonianze"
+                                    class="block px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-300">
+                                    Testimonianze
+                                </a>
+                                <a href="#faq"
+                                    class="block px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-300">
+                                    FAQ
+                                </a>
+                                <a href="#contatti"
+                                    class="block mx-4 mt-4 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-xl text-center hover:bg-white/30 transition-all duration-300 font-medium border border-white/30">
+                                    Contatti
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
 
         <!-- 1. HERO SECTION -->
-        <section class="py-16 px-4 bg-domora-gray">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <!-- Contenuto -->
-                    <div>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-domora-dark mb-6 leading-tight">
-                            A un passo dai tuoi sogni.
-                        </h1>
-                        <p class="text-xl md:text-2xl text-domora-secondary mb-8 leading-relaxed">
-                            Il modo più sicuro e trasparente per comprare casa, anche all'asta.
-                            Ti accompagniamo in ogni fase con chiarezza, esperienza e umanità.
-                        </p>
-                        <a href="#contatti"
-                            class="inline-block bg-domora-cyan text-domora-white font-semibold px-8 py-4 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 text-lg">
-                            Prenota una consulenza gratuita
-                        </a>
-                    </div>
-                    
-                    <!-- Immagine -->
-                    <div class="lg:order-last">
-                        <div class="relative">
-                            <div class="aspect-w-4 aspect-h-3 bg-gray-200 rounded-lg overflow-hidden">
-                                <!-- Immagine stock di immobile moderno -->
-                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                                     alt="Casa moderna elegante" 
-                                     class="w-full h-full object-cover">
+        <section class="relative min-h-screen flex items-center overflow-hidden">
+            <!-- Background con gradiente -->
+            <div class="absolute inset-0 bg-gradient-to-br from-domora-cyan via-domora-cyan to-domora-green"></div>
+            
+            <!-- Contenuto -->
+            <div class="relative z-10 w-full px-4 py-16">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- Contenuto testuale -->
+                        <div class="text-white">
+                            <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-8 leading-tight mt-16 md:mt-8">
+                                A un passo
+                                <span class="block">dai tuoi sogni.</span>
+                            </h1>
+                            <p class="text-xl md:text-2xl mb-10 leading-relaxed opacity-90 max-w-2xl">
+                                Consulenza immobiliare che mette il controllo locale e la trasparenza al primo posto.
+                                Guidati da una community di esperti e professionisti appassionati.
+                            </p>
+                            
+                            <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                                <a href="#contatti"
+                                    class="inline-flex items-center justify-center bg-domora-dark text-white font-semibold px-8 py-4 rounded-lg hover:bg-opacity-90 transition-all duration-300 text-lg group">
+                                    INIZIA SUBITO
+                                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </a>
+                                <div class="flex items-center gap-6 text-white opacity-75">
+                                    <a href="#servizi" class="hover:opacity-100 transition-opacity">Scopri i servizi</a>
+                                    <a href="#testimonianze" class="hover:opacity-100 transition-opacity">Leggi le recensioni</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Badge -->
+                            <div class="flex items-center gap-3 bg-white bg-opacity-10 backdrop-blur-sm rounded-full px-4 py-2 w-fit">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white text-sm font-medium">
+                                    Consulenza immobiliare specializzata
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Mockup/Dashboard -->
+                        <div class="relative lg:order-last">
+                            <div class="relative max-w-md mx-auto lg:max-w-lg">
+                                <!-- Phone mockup background -->
+                                <div class="bg-white rounded-3xl p-2 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                                    <div class="bg-gray-50 rounded-2xl overflow-hidden">
+                                        <!-- Header -->
+                                        <div class="bg-domora-cyan p-4 flex items-center justify-between">
+                                            <div class="flex items-center gap-2">
+                                                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                                    <svg class="w-4 h-4 text-domora-cyan" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-white font-semibold">Aste Domora</span>
+                                            </div>
+                                            <div class="w-6 h-6 text-white">
+                                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Stats -->
+                                        <div class="p-4 space-y-4">
+                                            <div class="grid grid-cols-2 gap-4">
+                                                <div class="bg-white rounded-lg p-3 text-center">
+                                                    <div class="text-2xl font-bold text-domora-dark">€185k</div>
+                                                    <div class="text-sm text-gray-500">Risparmi medi</div>
+                                                </div>
+                                                <div class="bg-white rounded-lg p-3 text-center">
+                                                    <div class="text-2xl font-bold text-domora-green">98%</div>
+                                                    <div class="text-sm text-gray-500">Successo aste</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Property cards -->
+                                            <div class="space-y-3">
+                                                <div class="bg-white rounded-lg p-3 flex items-center gap-3">
+                                                    <div class="w-10 h-10 bg-domora-cyan rounded-lg flex items-center justify-center">
+                                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <div class="font-medium text-domora-dark">Milano Centro</div>
+                                                        <div class="text-sm text-gray-500">Trilocale • 85 mq</div>
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <div class="font-bold text-domora-green">€450k</div>
+                                                        <div class="text-xs text-gray-400">-25%</div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="bg-white rounded-lg p-3 flex items-center gap-3">
+                                                    <div class="w-10 h-10 bg-domora-green rounded-lg flex items-center justify-center">
+                                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <div class="font-medium text-domora-dark">Roma Prati</div>
+                                                        <div class="text-sm text-gray-500">Bilocale • 60 mq</div>
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <div class="font-bold text-domora-green">€320k</div>
+                                                        <div class="text-xs text-gray-400">-30%</div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="bg-white rounded-lg p-3 flex items-center gap-3">
+                                                    <div class="w-10 h-10 bg-domora-dark rounded-lg flex items-center justify-center">
+                                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <div class="font-medium text-domora-dark">Firenze Oltrarno</div>
+                                                        <div class="text-sm text-gray-500">Quadrilocale • 110 mq</div>
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <div class="font-bold text-domora-green">€580k</div>
+                                                        <div class="text-xs text-gray-400">-20%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -238,9 +357,22 @@
         </section>
 
         <!-- 2. COSA FACCIAMO -->
-        <section id="servizi" class="py-20 px-4 bg-domora-white">
-            <div class="max-w-6xl mx-auto">
+        <section id="servizi" class="py-20 px-4 bg-gradient-to-br from-domora-white via-blue-50 to-cyan-50 relative overflow-hidden">
+            <!-- Elementi decorativi di sfondo -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-domora-cyan opacity-5 rounded-full blur-xl"></div>
+                <div class="absolute top-1/2 -left-20 w-60 h-60 bg-domora-green opacity-5 rounded-full blur-xl"></div>
+                <div class="absolute bottom-10 right-1/4 w-32 h-32 bg-domora-cyan opacity-10 rounded-full blur-lg"></div>
+            </div>
+            
+            <div class="max-w-6xl mx-auto relative z-10">
                 <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 bg-domora-cyan/10 text-domora-cyan px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        I nostri servizi
+                    </div>
                     <h2 class="text-4xl md:text-5xl font-display font-bold text-domora-dark mb-6">
                         Zero chiacchiere, solo fatti.
                     </h2>
@@ -251,137 +383,324 @@
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Servizio 1 -->
-                    <div class="text-center p-8 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow">
-                        <div class="w-16 h-16 bg-domora-cyan bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-domora-cyan" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.84L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-                            </svg>
+                    <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-domora-cyan/30 transform hover:-translate-y-2">
+                        <!-- Background gradient per hover -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-domora-cyan/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-br from-domora-cyan to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                                    <polyline points="2,17 12,22 22,17"/>
+                                    <polyline points="2,12 12,17 22,12"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-display font-semibold text-domora-dark mb-4 text-center group-hover:text-domora-cyan transition-colors">
+                                Acquisto immobili all'asta
+                            </h3>
+                            <p class="text-domora-secondary text-center leading-relaxed">
+                                Ti accompagniamo con competenza e chiarezza in ogni fase dell'acquisto all'asta, 
+                                dalla prima valutazione fino alla chiusura dell'operazione.
+                            </p>
+                            <div class="mt-6 text-center">
+                                <div class="inline-flex items-center text-domora-cyan font-medium text-sm group-hover:text-domora-dark transition-colors">
+                                    <span>Scopri di più</span>
+                                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-display font-semibold text-domora-dark mb-4">
-                            Acquisto immobili all'asta
-                        </h3>
-                        <p class="text-domora-secondary">
-                            Ti accompagniamo con competenza e chiarezza in ogni fase dell'acquisto all'asta, 
-                            dalla prima valutazione fino alla chiusura dell'operazione.
-                        </p>
                     </div>
 
                     <!-- Servizio 2 -->
-                    <div class="text-center p-8 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow">
-                        <div class="w-16 h-16 bg-domora-green bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-domora-green" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
+                    <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-domora-green/30 transform hover:-translate-y-2">
+                        <!-- Background gradient per hover -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-domora-green/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-br from-domora-green to-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1M10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-display font-semibold text-domora-dark mb-4 text-center group-hover:text-domora-green transition-colors">
+                                Assistenza legale e notarile
+                            </h3>
+                            <p class="text-domora-secondary text-center leading-relaxed">
+                                Ti affianchiamo con competenza in tutti gli aspetti 
+                                legali e contrattuali, assicurando trasparenza e sicurezza.
+                            </p>
+                            <div class="mt-6 text-center">
+                                <div class="inline-flex items-center text-domora-green font-medium text-sm group-hover:text-domora-dark transition-colors">
+                                    <span>Scopri di più</span>
+                                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-display font-semibold text-domora-dark mb-4">
-                            Assistenza legale e notarile
-                        </h3>
-                        <p class="text-domora-secondary">
-                            Ti affianchiamo con competenza in tutti gli aspetti 
-                            legali e contrattuali, assicurando trasparenza e sicurezza.
-                        </p>
                     </div>
 
                     <!-- Servizio 3 -->
-                    <div class="text-center p-8 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow">
-                        <div class="w-16 h-16 bg-domora-dark bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-domora-dark" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"/>
-                            </svg>
+                    <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-domora-dark/30 transform hover:-translate-y-2">
+                        <!-- Background gradient per hover -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-domora-dark/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-br from-domora-dark to-gray-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 7H18V6A2 2 0 0 0 16 4H8A2 2 0 0 0 6 6V7H5A3 3 0 0 0 2 10V18A3 3 0 0 0 5 21H19A3 3 0 0 0 22 18V10A3 3 0 0 0 19 7M8 6H16V7H8V6M20 18A1 1 0 0 1 19 19H5A1 1 0 0 1 4 18V10A1 1 0 0 1 5 9H19A1 1 0 0 1 20 10V18M9 12H15A1 1 0 0 1 15 14H9A1 1 0 0 1 9 12Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-display font-semibold text-domora-dark mb-4 text-center group-hover:text-domora-dark transition-colors">
+                                Consulenza fiscale e burocratica
+                            </h3>
+                            <p class="text-domora-secondary text-center leading-relaxed">
+                                Ti supportiamo nella gestione degli aspetti fiscali e amministrativi, 
+                                semplificando ogni passaggio e ottimizzando le opportunità.
+                            </p>
+                            <div class="mt-6 text-center">
+                                <div class="inline-flex items-center text-domora-dark font-medium text-sm group-hover:text-domora-cyan transition-colors">
+                                    <span>Scopri di più</span>
+                                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-display font-semibold text-domora-dark mb-4">
-                            Consulenza fiscale e burocratica
-                        </h3>
-                        <p class="text-domora-secondary">
-                            Ti supportiamo nella gestione degli aspetti fiscali e amministrativi, 
-                            semplificando ogni passaggio e ottimizzando le opportunità.
-                        </p>
+                    </div>
+                </div>
+                
+                <!-- Sezione statistiche colorata -->
+                <div class="mt-20 grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-8 bg-gradient-to-br from-domora-cyan to-cyan-400 rounded-2xl text-white transform hover:scale-105 transition-transform duration-300 shadow-xl">
+                        <div class="text-5xl font-bold mb-3">98%</div>
+                        <div class="text-cyan-100 font-medium text-lg">Successo nelle aste</div>
+                        <div class="mt-2 w-16 h-1 bg-white bg-opacity-30 mx-auto rounded-full"></div>
+                    </div>
+                    <div class="text-center p-8 bg-gradient-to-br from-domora-green to-emerald-400 rounded-2xl text-white transform hover:scale-105 transition-transform duration-300 shadow-xl">
+                        <div class="text-5xl font-bold mb-3">€185k</div>
+                        <div class="text-green-100 font-medium text-lg">Risparmio medio clienti</div>
+                        <div class="mt-2 w-16 h-1 bg-white bg-opacity-30 mx-auto rounded-full"></div>
+                    </div>
+                    <div class="text-center p-8 bg-gradient-to-br from-domora-dark to-gray-600 rounded-2xl text-white transform hover:scale-105 transition-transform duration-300 shadow-xl">
+                        <div class="text-5xl font-bold mb-3">250+</div>
+                        <div class="text-gray-100 font-medium text-lg">Clienti soddisfatti</div>
+                        <div class="mt-2 w-16 h-1 bg-white bg-opacity-30 mx-auto rounded-full"></div>
                     </div>
                 </div>
                 
                 <!-- Immagine di supporto servizi -->
-                <div class="mt-16 text-center">
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
-                         alt="Professionisti Domora al lavoro" 
-                         class="mx-auto rounded-lg shadow-lg max-w-4xl w-full">
+                <div class="mt-16 relative">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Consulenti immobiliari Domora durante una valutazione" 
+                             class="w-full h-64 md:h-80 object-cover">
+                        <!-- Overlay con contenuto -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-domora-dark/70 to-transparent flex items-center">
+                            <div class="text-white p-8 md:p-12 max-w-lg">
+                                <h3 class="text-2xl md:text-3xl font-bold mb-4">Ogni casa ha una storia</h3>
+                                <p class="text-lg opacity-90">I nostri esperti ti guidano attraverso ogni dettaglio, assicurandoti la migliore esperienza possibile.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
         <!-- 3. TESTIMONIANZE -->
-        <section id="testimonianze" class="py-20 px-4 bg-domora-gray">
-            <div class="max-w-6xl mx-auto">
+        <section id="testimonianze" class="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto">
+                <!-- Header con Trustpilot Badge -->
                 <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-3 bg-white rounded-full px-6 py-3 shadow-lg mb-8">
+                        <div class="flex items-center gap-2">
+                            <div class="flex gap-1">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                            <span class="font-bold text-gray-900">Eccezionale</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-green-600 font-bold">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                            <span class="text-lg">Trustpilot</span>
+                        </div>
+                    </div>
+                    
                     <h2 class="text-4xl md:text-5xl font-display font-bold text-domora-dark mb-6">
                         Le parole dei nostri clienti
                     </h2>
-                    <p class="text-xl text-domora-secondary">
-                        Quando la professionalità incontra l'umanità, nascono relazioni che durano nel tempo.
+                    <p class="text-xl text-domora-secondary max-w-3xl mx-auto">
+                        Ogni storia è una testimonianza della nostra dedizione e professionalità
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Testimonianza 1 -->
-                    <div class="bg-domora-white p-8 rounded-lg shadow-sm">
-                        <div class="mb-6">
-                            <svg class="w-8 h-8 text-domora-cyan" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                <!-- Recensioni Cards -->
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <!-- Recensione 1 - Mario S. -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex gap-1">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full">Trustpilot</span>
                         </div>
-                        <blockquote class="text-domora-dark mb-6 italic">
-                            "Zero chiacchiere, solo fatti"
+                        
+                        <h3 class="text-xl font-bold text-domora-dark mb-4">Ci hanno preso per mano</h3>
+                        
+                        <blockquote class="text-gray-700 mb-6 leading-relaxed">
+                            "Quando abbiamo iniziato a valutare l'acquisto di casa, ci sentivamo spaesati. Troppe informazioni, troppi rischi. Domora è stato per noi un faro: ci hanno ascoltati, guidati e protetti in ogni imprevisto. Ogni passo è stato chiaro, spiegato con pazienza. Oggi siamo sereni, e finalmente nella casa che desideravamo."
                         </blockquote>
-                        <div class="text-sm">
-                            <div class="font-semibold text-domora-dark">Aurora G.</div>
-                            <div class="text-domora-secondary">Cliente soddisfatta</div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="font-semibold text-domora-dark">Mario S.</div>
+                                <div class="text-sm text-gray-500">Cliente verificato</div>
+                            </div>
+                            <div class="text-sm text-gray-400">2 mesi fa</div>
                         </div>
                     </div>
 
-                    <!-- Testimonianza 2 -->
-                    <div class="bg-domora-white p-8 rounded-lg shadow-sm">
-                        <div class="mb-6">
-                            <svg class="w-8 h-8 text-domora-green" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                    <!-- Recensione 2 - Aldo F. -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex gap-1">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full">Trustpilot</span>
                         </div>
-                        <blockquote class="text-domora-dark mb-6 italic">
-                            "Ci hanno preso per mano"
+                        
+                        <h3 class="text-xl font-bold text-domora-dark mb-4">Gente seria, finalmente!</h3>
+                        
+                        <blockquote class="text-gray-700 mb-6 leading-relaxed">
+                            "Avevamo già avuto brutte esperienze con agenzie poco chiare, quindi eravamo un po' diffidenti. Ma con Domora è andata in un'altra musica: professionali, disponibili, mai invadenti. Ti dicono le cose come stanno, e si fanno in quattro per aiutarti. La casa che abbiamo trovato grazie a loro è esattamente quello che cercavamo."
                         </blockquote>
-                        <div class="text-sm">
-                            <div class="font-semibold text-domora-dark">Mario S.</div>
-                            <div class="text-domora-secondary">Cliente soddisfatto</div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="font-semibold text-domora-dark">Aldo F.</div>
+                                <div class="text-sm text-gray-500">Cliente verificato</div>
+                            </div>
+                            <div class="text-sm text-gray-400">1 mese fa</div>
                         </div>
                     </div>
 
-                    <!-- Testimonianza 3 -->
-                    <div class="bg-domora-white p-8 rounded-lg shadow-sm">
-                        <div class="mb-6">
-                            <svg class="w-8 h-8 text-domora-dark" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                    <!-- Recensione 3 - Aurora G. -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex gap-1">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full">Trustpilot</span>
                         </div>
-                        <blockquote class="text-domora-dark mb-6 italic">
-                            "Gente seria, finalmente!"
+                        
+                        <h3 class="text-xl font-bold text-domora-dark mb-4">Zero chiacchiere, solo fatti</h3>
+                        
+                        <blockquote class="text-gray-700 mb-6 leading-relaxed">
+                            "Dritti al punto. Avevo bisogno di comprare un immobile, senza fregature né perdite di tempo. Domora non fa promesse da venditore, ma dice cosa può fare, come farà e in quanto tempo. Ti seguono ovunque: dal primo appuntamento alla firma del notaio. Se c'è un problema, lo risolvono. Così si lavora."
                         </blockquote>
-                        <div class="text-sm">
-                            <div class="font-semibold text-domora-dark">Aldo F.</div>
-                            <div class="text-domora-secondary">Cliente soddisfatto</div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="font-semibold text-domora-dark">Aurora G.</div>
+                                <div class="text-sm text-gray-500">Cliente verificata</div>
+                            </div>
+                            <div class="text-sm text-gray-400">3 settimane fa</div>
                         </div>
                     </div>
 
-                    <!-- Testimonianza 4 -->
-                    <div class="bg-domora-white p-8 rounded-lg shadow-sm">
-                        <div class="mb-6">
-                            <svg class="w-8 h-8 text-domora-cyan" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                            </svg>
+                    <!-- Recensione 4 - Dario A. -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex gap-1">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full">Trustpilot</span>
                         </div>
-                        <blockquote class="text-domora-dark mb-6 italic">
-                            "Ho fatto un vero affare!"
+                        
+                        <h3 class="text-xl font-bold text-domora-dark mb-4">Ho fatto un vero affare!</h3>
+                        
+                        <blockquote class="text-gray-700 mb-6 leading-relaxed">
+                            "Mi sono sempre mosso da solo, questa volta ho voluto fare le cose per bene. Domora mi ha portato su un'asta all'ultima con un margine incredibile. Abbiamo fatto tutto in pochi mesi. Ho speso la metà di quanto mi aspettassi e oggi ho una casa che vale il doppio. Se sai cosa vuoi, loro sono il mezzo per arrivarci."
                         </blockquote>
-                        <div class="text-sm">
-                            <div class="font-semibold text-domora-dark">Dario A.</div>
-                            <div class="text-domora-secondary">Cliente soddisfatto</div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="font-semibold text-domora-dark">Dario A.</div>
+                                <div class="text-sm text-gray-500">Cliente verificato</div>
+                            </div>
+                            <div class="text-sm text-gray-400">6 giorni fa</div>
                         </div>
                     </div>
                 </div>
@@ -389,190 +708,375 @@
         </section>
 
         <!-- 4. FAQ -->
-        <section id="faq" class="py-20 px-4 bg-domora-white">
-            <div class="max-w-4xl mx-auto">
+        <section id="faq" class="py-20 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 relative overflow-hidden">
+            <!-- Elementi decorativi -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-10 right-10 w-32 h-32 bg-domora-cyan opacity-10 rounded-full blur-xl"></div>
+                <div class="absolute bottom-20 left-10 w-40 h-40 bg-domora-green opacity-5 rounded-full blur-xl"></div>
+                <div class="absolute top-1/2 right-1/4 w-24 h-24 bg-domora-dark opacity-5 rounded-full blur-lg"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto relative z-10">
                 <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                        </svg>
+                        Domande frequenti
+                    </div>
                     <h2 class="text-4xl md:text-5xl font-display font-bold text-domora-dark mb-6">
                         Che rischi ci sono nell'acquisto all'asta?
                     </h2>
-                    <p class="text-xl text-domora-secondary">
+                    <p class="text-xl text-domora-secondary max-w-2xl mx-auto">
                         Le domande più frequenti dei nostri clienti, con risposte chiare e rassicuranti.
                     </p>
                 </div>
 
                 <div class="space-y-6">
                     <!-- FAQ 1 -->
-                    <div class="border border-gray-200 rounded-lg">
+                    <div class="group bg-white rounded-2xl border border-gray-200 hover:border-domora-cyan/50 shadow-lg hover:shadow-xl transition-all duration-300">
                         <button
-                            class="w-full px-6 py-4 text-left focus:outline-none"
+                            class="w-full px-8 py-6 text-left focus:outline-none"
                             onclick="toggleAccordion('faq1')">
                             <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-semibold text-domora-dark">
-                                    È sicuro comprare una casa all'asta?
-                                </h3>
-                                <svg class="w-5 h-5 text-domora-secondary transform transition-transform" id="icon-faq1" fill="currentColor" viewBox="0 0 20 20">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1M10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-semibold text-domora-dark group-hover:text-domora-cyan transition-colors">
+                                        È sicuro comprare una casa all'asta?
+                                    </h3>
+                                </div>
+                                <svg class="w-6 h-6 text-domora-secondary transform transition-transform group-hover:text-domora-cyan" id="icon-faq1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                         </button>
-                        <div class="hidden px-6 pb-4" id="faq1">
-                            <p class="text-domora-secondary">
-                                Assolutamente sì, se ti fai accompagnare da professionisti esperti. 
-                                Domora si occupa di verificare tutti gli aspetti legali, urbanistici e 
-                                fiscali prima di ogni partecipazione, garantendoti la massima sicurezza.
-                            </p>
+                        <div class="hidden px-8 pb-6" id="faq1">
+                            <div class="ml-16 p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                                <p class="text-domora-secondary leading-relaxed">
+                                    Assolutamente sì, se ti fai accompagnare da professionisti esperti. 
+                                    Domora si occupa di verificare tutti gli aspetti legali, urbanistici e 
+                                    fiscali prima di ogni partecipazione, garantendoti la massima sicurezza.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- FAQ 2 -->
-                    <div class="border border-gray-200 rounded-lg">
+                    <div class="group bg-white rounded-2xl border border-gray-200 hover:border-domora-cyan/50 shadow-lg hover:shadow-xl transition-all duration-300">
                         <button
-                            class="w-full px-6 py-4 text-left focus:outline-none"
+                            class="w-full px-8 py-6 text-left focus:outline-none"
                             onclick="toggleAccordion('faq2')">
                             <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-semibold text-domora-dark">
-                                    Quali documenti devo preparare?
-                                </h3>
-                                <svg class="w-5 h-5 text-domora-secondary transform transition-transform" id="icon-faq2" fill="currentColor" viewBox="0 0 20 20">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-semibold text-domora-dark group-hover:text-domora-cyan transition-colors">
+                                        Quali documenti devo preparare?
+                                    </h3>
+                                </div>
+                                <svg class="w-6 h-6 text-domora-secondary transform transition-transform group-hover:text-domora-cyan" id="icon-faq2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                         </button>
-                        <div class="hidden px-6 pb-4" id="faq2">
-                            <p class="text-domora-secondary">
-                                Non preoccuparti della burocrazia: ci pensiamo noi. Ti guideremo 
-                                nella preparazione di tutti i documenti necessari e ci occuperemo 
-                                di ogni aspetto amministrativo per te.
-                            </p>
+                        <div class="hidden px-8 pb-6" id="faq2">
+                            <div class="ml-16 p-4 bg-blue-50 rounded-xl border-l-4 border-blue-400">
+                                <p class="text-domora-secondary leading-relaxed">
+                                    Non preoccuparti della burocrazia: ci pensiamo noi. Ti guideremo 
+                                    nella preparazione di tutti i documenti necessari e ci occuperemo 
+                                    di ogni aspetto amministrativo per te.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- FAQ 3 -->
-                    <div class="border border-gray-200 rounded-lg">
+                    <div class="group bg-white rounded-2xl border border-gray-200 hover:border-domora-cyan/50 shadow-lg hover:shadow-xl transition-all duration-300">
                         <button
-                            class="w-full px-6 py-4 text-left focus:outline-none"
+                            class="w-full px-8 py-6 text-left focus:outline-none"
                             onclick="toggleAccordion('faq3')">
                             <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-semibold text-domora-dark">
-                                    Quanto posso risparmiare comprando all'asta?
-                                </h3>
-                                <svg class="w-5 h-5 text-domora-secondary transform transition-transform" id="icon-faq3" fill="currentColor" viewBox="0 0 20 20">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10M7,22H9L9.5,20H14.5L15,22H17L13,2H11L7,22M11.25,18L12,15.67L12.75,18H11.25Z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-semibold text-domora-dark group-hover:text-domora-cyan transition-colors">
+                                        Quanto posso risparmiare comprando all'asta?
+                                    </h3>
+                                </div>
+                                <svg class="w-6 h-6 text-domora-secondary transform transition-transform group-hover:text-domora-cyan" id="icon-faq3" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                         </button>
-                        <div class="hidden px-6 pb-4" id="faq3">
-                            <p class="text-domora-secondary">
-                                I risparmi variano caso per caso, ma generalmente si aggirano 
-                                tra il 20% e il 40% rispetto al prezzo di mercato. Il nostro 
-                                team valuta sempre il rapporto qualità-prezzo per garantirti 
-                                il miglior investimento.
-                            </p>
+                        <div class="hidden px-8 pb-6" id="faq3">
+                            <div class="ml-16 p-4 bg-orange-50 rounded-xl border-l-4 border-orange-400">
+                                <p class="text-domora-secondary leading-relaxed">
+                                    I risparmi variano caso per caso, ma generalmente si aggirano 
+                                    tra il 20% e il 40% rispetto al prezzo di mercato. Il nostro 
+                                    team valuta sempre il rapporto qualità-prezzo per garantirti 
+                                    il miglior investimento.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <!-- FAQ 4 -->
-                    <div class="border border-gray-200 rounded-lg">
+                    <div class="group bg-white rounded-2xl border border-gray-200 hover:border-domora-cyan/50 shadow-lg hover:shadow-xl transition-all duration-300">
                         <button
-                            class="w-full px-6 py-4 text-left focus:outline-none"
+                            class="w-full px-8 py-6 text-left focus:outline-none"
                             onclick="toggleAccordion('faq4')">
                             <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-semibold text-domora-dark">
-                                    Cosa succede se non vinco l'asta?
-                                </h3>
-                                <svg class="w-5 h-5 text-domora-secondary transform transition-transform" id="icon-faq4" fill="currentColor" viewBox="0 0 20 20">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-semibold text-domora-dark group-hover:text-domora-cyan transition-colors">
+                                        Cosa succede se non vinco l'asta?
+                                    </h3>
+                                </div>
+                                <svg class="w-6 h-6 text-domora-secondary transform transition-transform group-hover:text-domora-cyan" id="icon-faq4" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
                         </button>
-                        <div class="hidden px-6 pb-4" id="faq4">
-                            <p class="text-domora-secondary">
-                                Nessun problema. Ti proporremo immediatamente altre opportunità 
-                                che corrispondono ai tuoi criteri. Il nostro database è sempre 
-                                aggiornato con le migliori occasioni sul mercato.
-                            </p>
+                        <div class="hidden px-8 pb-6" id="faq4">
+                            <div class="ml-16 p-4 bg-purple-50 rounded-xl border-l-4 border-purple-400">
+                                <p class="text-domora-secondary leading-relaxed">
+                                    Nessun problema. Ti proporremo immediatamente altre opportunità 
+                                    che corrispondono ai tuoi criteri. Il nostro database è sempre 
+                                    aggiornato con le migliori occasioni sul mercato.
+                                </p>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                
+                <!-- Call to action colorata nella sezione FAQ -->
+                <div class="mt-16 text-center">
+                    <div class="bg-gradient-to-r from-domora-cyan to-domora-green rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-4">Hai altre domande?</h3>
+                        <p class="text-lg opacity-90 mb-6">I nostri esperti sono sempre disponibili per rispondere ai tuoi dubbi</p>
+                        <a href="#contatti" class="inline-flex items-center bg-white text-domora-dark font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            Contattaci subito
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 5. CALL TO ACTION FINALE -->
-        <section id="contatti" class="py-20 px-4 bg-domora-gray">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-display font-bold text-domora-dark mb-6">
+        <section id="contatti" class="py-20 px-4 bg-gradient-to-br from-domora-dark via-gray-800 to-domora-green relative overflow-hidden">
+            <!-- Elementi decorativi di sfondo -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-20 left-10 w-32 h-32 bg-domora-cyan opacity-10 rounded-full blur-xl"></div>
+                <div class="absolute bottom-40 right-20 w-40 h-40 bg-domora-green opacity-10 rounded-full blur-xl"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-domora-cyan opacity-5 rounded-full blur-2xl"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        Inizia il tuo percorso
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-display font-bold text-white mb-6">
                         Parliamone, senza impegno.
                     </h2>
-                    <p class="text-xl text-domora-secondary">
+                    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
                         Ogni casa ha una storia. La tua può iniziare oggi.
                     </p>
                 </div>
 
-                <div class="bg-domora-white rounded-lg shadow-sm p-8">
-                    <form action="#" method="POST" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="nome" class="block text-sm font-medium text-domora-dark mb-2">
-                                    Nome *
-                                </label>
-                                <input type="text" id="nome" name="nome" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-colors">
-                            </div>
-                            <div>
-                                <label for="cognome" class="block text-sm font-medium text-domora-dark mb-2">
-                                    Cognome *
-                                </label>
-                                <input type="text" id="cognome" name="cognome" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-colors">
-                            </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <!-- Form -->
+                    <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-domora-dark mb-2">Compila il form</h3>
+                            <p class="text-domora-secondary">Ti ricontatteremo entro 24 ore</p>
                         </div>
+                        
+                        <form action="#" method="POST" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="nome" class="block text-sm font-medium text-domora-dark mb-2">
+                                        Nome *
+                                    </label>
+                                    <input type="text" id="nome" name="nome" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-all duration-300 bg-white/80">
+                                </div>
+                                <div>
+                                    <label for="cognome" class="block text-sm font-medium text-domora-dark mb-2">
+                                        Cognome *
+                                    </label>
+                                    <input type="text" id="cognome" name="cognome" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-all duration-300 bg-white/80">
+                                </div>
+                            </div>
 
-                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-domora-dark mb-2">
+                                        Email *
+                                    </label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-all duration-300 bg-white/80">
+                                </div>
+                                <div>
+                                    <label for="telefono" class="block text-sm font-medium text-domora-dark mb-2">
+                                        Telefono *
+                                    </label>
+                                    <input type="tel" id="telefono" name="telefono" required
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-all duration-300 bg-white/80">
+                                </div>
+                            </div>
+
                             <div>
-                                <label for="email" class="block text-sm font-medium text-domora-dark mb-2">
-                                    Email *
+                                <label for="messaggio" class="block text-sm font-medium text-domora-dark mb-2">
+                                    Messaggio
                                 </label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-colors">
+                                <textarea id="messaggio" name="messaggio" rows="4" placeholder="Raccontaci il tuo sogno abitativo. Siamo qui per ascoltarti."
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-all duration-300 bg-white/80 resize-none"></textarea>
                             </div>
-                            <div>
-                                <label for="telefono" class="block text-sm font-medium text-domora-dark mb-2">
-                                    Telefono *
-                                </label>
-                                <input type="tel" id="telefono" name="telefono" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-colors">
-                            </div>
-                        </div>
 
-                        <div>
-                            <label for="messaggio" class="block text-sm font-medium text-domora-dark mb-2">
-                                Messaggio
-                            </label>
-                            <textarea id="messaggio" name="messaggio" rows="5" placeholder="Raccontaci il tuo sogno abitativo. Siamo qui per ascoltarti."
-                                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-domora-cyan focus:border-domora-cyan transition-colors"></textarea>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="flex items-center h-5">
-                                <input id="privacy" name="privacy" type="checkbox" required
-                                    class="w-4 h-4 text-domora-cyan border-gray-300 rounded focus:ring-domora-cyan">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="privacy" name="privacy" type="checkbox" required
+                                        class="w-4 h-4 text-domora-cyan border-gray-300 rounded focus:ring-domora-cyan">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="privacy" class="text-domora-secondary">
+                                        Accetto la <a href="./privacy-policy.html" class="text-domora-cyan hover:underline">Privacy Policy</a> 
+                                        e autorizzo il trattamento dei miei dati personali *
+                                    </label>
+                                </div>
                             </div>
-                            <div class="ml-3 text-sm">
-                                <label for="privacy" class="text-domora-secondary">
-                                    Accetto la <a href="./privacy-policy.html" class="text-domora-cyan hover:underline">Privacy Policy</a> 
-                                    e autorizzo il trattamento dei miei dati personali *
-                                </label>
+
+                            <div class="text-center">
+                                <button type="submit"
+                                    class="w-full bg-gradient-to-r from-domora-cyan to-domora-green text-white font-semibold px-8 py-4 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-lg">
+                                    INVIA RICHIESTA
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Info contatti con immagini -->
+                    <div class="space-y-8">
+                        <!-- Contatti rapidi -->
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
+                            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                                <svg class="w-6 h-6 text-domora-cyan" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                                Contatti diretti
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-domora-cyan rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Email</p>
+                                        <p class="text-gray-300 text-sm">info@domoraimmobiliare.it</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-domora-green rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Telefono</p>
+                                        <p class="text-gray-300 text-sm">+39 XXX XXX XXXX</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-domora-dark rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Indirizzo</p>
+                                        <p class="text-gray-300 text-sm">Via Example, 123<br>00100 Roma (RM)</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="text-center">
-                            <button type="submit"
-                                class="bg-domora-cyan text-domora-white font-semibold px-8 py-4 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 text-lg">
-                                INVIA
-                            </button>
+                        
+                        <!-- Statistiche aste -->
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
+                            <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                                <svg class="w-6 h-6 text-domora-cyan" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Le nostre performance
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 bg-domora-cyan rounded-lg flex items-center justify-center">
+                                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M8 7V3a4 4 0 118 0v4a1 1 0 001 1v5a1 1 0 01-1 1H6a1 1 0 01-1-1V8a1 1 0 011-1h2zm0-3a2 2 0 114 0v3H8V4z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium">Aste seguite questo mese</p>
+                                            <p class="text-gray-300 text-sm">Ottobre 2025</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-domora-cyan">47</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 bg-domora-green rounded-lg flex items-center justify-center">
+                                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium">Tempo medio operazione</p>
+                                            <p class="text-gray-300 text-sm">Dalla valutazione alla firma</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-bold text-domora-green">45</div>
+                                        <div class="text-sm text-gray-300">giorni</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
                 </div>
             </div>
         </section>
@@ -596,8 +1100,6 @@
                             <li><a href="#servizi" class="text-gray-300 hover:text-domora-white transition-colors">Servizi</a></li>
                             <li><a href="#testimonianze" class="text-gray-300 hover:text-domora-white transition-colors">Testimonianze</a></li>
                             <li><a href="#faq" class="text-gray-300 hover:text-domora-white transition-colors">FAQ</a></li>
-                            <li><a href="./privacy-policy.html" class="text-gray-300 hover:text-domora-white transition-colors">Privacy Policy</a></li>
-                            <li><a href="./cookie-policy.html" class="text-gray-300 hover:text-domora-white transition-colors">Cookie Policy</a></li>
                         </ul>
                     </div>
 
@@ -661,6 +1163,26 @@
 
             // Anno corrente nel footer
             document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Simple navbar that changes after hero section
+            function updateNavbar() {
+                const navbar = document.getElementById('navbarContainer');
+                const heroSection = document.querySelector('section'); // First section (hero)
+                const scrollY = window.scrollY;
+                const heroHeight = heroSection ? heroSection.offsetHeight : 0;
+                
+                if (scrollY > heroHeight - 100) {
+                    // After hero: solid blue background
+                    navbar.className = 'bg-domora-dark backdrop-blur-md border border-domora-dark/20 rounded-2xl shadow-lg transition-all duration-500';
+                } else {
+                    // In hero: glass effect
+                    navbar.className = 'bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg transition-all duration-500';
+                }
+            }
+            
+            // Initial call and scroll listener
+            updateNavbar();
+            window.addEventListener('scroll', updateNavbar);
         </script>
 
     </body>
