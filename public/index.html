@@ -1281,8 +1281,75 @@ src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
             updateNavbar();
             window.addEventListener('scroll', updateNavbar);
 
-            // 📊 TRACCIAMENTO META PIXEL - SOLO LEAD
+            // 📊 TRACCIAMENTO META PIXEL - EVENTI CONTROLLATI
             let leadTracked = false; // Flag per evitare duplicati Lead
+            let pageScrollTracked = false; // Flag per ViewContent
+            let formEngagementTracked = false; // Flag per InitiateCheckout
+            
+            // ViewContent quando arriva alla sezione contatti
+            function trackPageScroll() {
+                if (pageScrollTracked) return;
+                
+                const contactSection = document.getElementById('contatti');
+                if (!contactSection) return;
+                
+                const scrollY = window.scrollY;
+                const contactSectionTop = contactSection.offsetTop;
+                const viewportHeight = window.innerHeight;
+                
+                if (scrollY + viewportHeight >= contactSectionTop + (contactSection.offsetHeight * 0.25)) {
+                    try {
+                        if (typeof fbq !== 'undefined') {
+                            fbq('track', 'ViewContent', {
+                                content_name: 'Contact Form Section',
+                                content_type: 'contact_form'
+                            });
+                            console.log('📊 Meta Pixel: ViewContent tracciato (controllo manuale)');
+                            pageScrollTracked = true;
+                            window.removeEventListener('scroll', trackPageScroll);
+                        }
+                    } catch (error) {
+                        console.error('Meta Pixel ViewContent error:', error);
+                    }
+                }
+            }
+            
+            // InitiateCheckout quando inizia a compilare
+            function trackFormEngagement() {
+                if (formEngagementTracked) return;
+                
+                try {
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'InitiateCheckout', {
+                            content_name: 'Real Estate Inquiry Form',
+                            content_type: 'form_engagement'
+                        });
+                        console.log('📊 Meta Pixel: InitiateCheckout tracciato (controllo manuale)');
+                        formEngagementTracked = true;
+                        
+                        // Rimuovi listeners per evitare duplicati
+                        ['name', 'email', 'phone'].forEach(fieldName => {
+                            const field = document.getElementById(fieldName);
+                            if (field) {
+                                field.removeEventListener('focus', trackFormEngagement);
+                                field.removeEventListener('input', trackFormEngagement);
+                            }
+                        });
+                    }
+                } catch (error) {
+                    console.error('Meta Pixel InitiateCheckout error:', error);
+                }
+            }
+            
+            // Attiva listeners per eventi controllati
+            window.addEventListener('scroll', trackPageScroll);
+            ['name', 'email', 'phone'].forEach(fieldName => {
+                const field = document.getElementById(fieldName);
+                if (field) {
+                    field.addEventListener('focus', trackFormEngagement, { once: true });
+                    field.addEventListener('input', trackFormEngagement, { once: true });
+                }
+            });
 
             // Funzioni per il popup di feedback
             function showPopup(type, title, message) {
