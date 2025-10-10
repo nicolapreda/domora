@@ -134,7 +134,7 @@
         <link rel="apple-touch-icon" href="./assets/Domora_Logo_Color_Vertical.png" />
         <link rel="shortcut icon" href="./assets/Domora_Logo_Color_Vertical.png" type="image/png" />
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code - COMPLETAMENTE MANUALE -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -144,11 +144,30 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+
+// Inizializzazione Meta Pixel con tracciamento automatico COMPLETAMENTE disabilitato
 fbq('init', '1303036511295480', {
-    autoConfig: false, // Disabilita tracciamento automatico
-    debug: false
+    autoConfig: false,           // Disabilita configurazione automatica
+    debug: false,               // Disabilita debug
+    automatic_matching: false,  // Disabilita matching automatico
+    microdata: false           // Disabilita microdati automatici
 });
+
+// Disabilita esplicitamente il tracciamento automatico degli eventi
+fbq('set', 'autoConfig', false, '1303036511295480');
+
+// Blocca esplicitamente il tracciamento automatico dei click
+window.addEventListener('DOMContentLoaded', function() {
+    // Sovrascrivi la funzione di tracciamento automatico
+    if (window.fbq && window.fbq.set) {
+        fbq('set', 'automaticMatching', false, '1303036511295480');
+    }
+});
+
+// Solo PageView manuale
 fbq('track', 'PageView');
+
+console.log('🔧 Meta Pixel configurato in modalità SOLO MANUALE');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
@@ -1021,7 +1040,7 @@ src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
                             </div>
 
                             <div class="text-center">
-                                <button type="submit"
+                                <button type="submit" data-no-track="true"
                                     class="w-full bg-gradient-to-r from-domora-cyan to-domora-green text-white font-semibold px-8 py-4 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-lg">
                                     INVIA RICHIESTA
                                 </button>
