@@ -134,8 +134,9 @@
         <link rel="apple-touch-icon" href="./assets/Domora_Logo_Color_Vertical.png" />
         <link rel="shortcut icon" href="./assets/Domora_Logo_Color_Vertical.png" type="image/png" />
 
-<!-- Meta Pixel Code - COMPLETAMENTE MANUALE -->
+<!-- Meta Pixel Code - SOLO TRACCIAMENTO PERSONALIZZATO -->
 <script>
+// Meta Pixel implementazione MINIMALE senza auto-detection
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -145,29 +146,29 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-// Inizializzazione Meta Pixel con tracciamento automatico COMPLETAMENTE disabilitato
-fbq('init', '1303036511295480', {
-    autoConfig: false,           // Disabilita configurazione automatica
-    debug: false,               // Disabilita debug
-    automatic_matching: false,  // Disabilita matching automatico
-    microdata: false           // Disabilita microdati automatici
-});
+// Inizializzazione BARE MINIMUM
+fbq('init', '1303036511295480');
 
-// Disabilita esplicitamente il tracciamento automatico degli eventi
-fbq('set', 'autoConfig', false, '1303036511295480');
-
-// Blocca esplicitamente il tracciamento automatico dei click
-window.addEventListener('DOMContentLoaded', function() {
-    // Sovrascrivi la funzione di tracciamento automatico
-    if (window.fbq && window.fbq.set) {
+// DISABILITA TUTTO il tracciamento automatico dopo l'inizializzazione
+window.addEventListener('load', function() {
+    // Sovrascrivi le funzioni di auto-detection
+    if (window.fbq) {
+        // Disabilita completamente l'auto-detection
+        fbq('set', 'autoConfig', false, '1303036511295480');
         fbq('set', 'automaticMatching', false, '1303036511295480');
+        
+        // Blocca eventi automatici sovrascrivendo le funzioni interne
+        if (window.fbq.disablePushState) {
+            window.fbq.disablePushState = true;
+        }
     }
+    
+    console.log('🚫 Meta Pixel: Tracciamento automatico DISABILITATO');
 });
 
 // Solo PageView manuale
 fbq('track', 'PageView');
-
-console.log('🔧 Meta Pixel configurato in modalità SOLO MANUALE');
+console.log('� Meta Pixel: SOLO PageView e Lead personalizzati');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
@@ -1243,6 +1244,22 @@ src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
 
             // Anno corrente nel footer
             document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // 🚫 BLOCCO TRACCIAMENTO AUTOMATICO META PIXEL
+            document.addEventListener('DOMContentLoaded', function() {
+                // Disabilita listener di click automatici di Meta Pixel
+                const originalAddEventListener = Element.prototype.addEventListener;
+                Element.prototype.addEventListener = function(type, listener, options) {
+                    // Blocca solo i listener che potrebbero essere di Facebook
+                    if (type === 'click' && listener && listener.toString().includes('facebook')) {
+                        console.log('🚫 Bloccato listener click automatico Meta Pixel');
+                        return;
+                    }
+                    return originalAddEventListener.call(this, type, listener, options);
+                };
+                
+                console.log('🛡️ Protezione anti-tracking automatico attivata');
+            });
 
             // Simple navbar that changes after hero section
             function updateNavbar() {
