@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Nicola",
+    "email": "nicola.preda05@gmail.com",
+    "phone": "3453454434",
+    "business": "imm",
+    "challenge": "nicola.preda05@gmail.com",
+    "timePreference": "Mattina (9-12)",
+    "firstName": "Nicola",
+    "lastName": "",
+    "timestamp": "2025-10-10T00:00:03.355Z",
+    "source": "landing-page"
+  },
+  {
+    "name": "Nicola",
+    "email": "preda@gmail.com",
+    "phone": "4534543444",
+    "challenge": "dfgdf",
+    "timePreference": "Verso sera (15-18)",
+    "firstName": "Nicola",
+    "lastName": "",
+    "timestamp": "2025-10-10T00:12:18.811Z",
+    "source": "landing-page"
+  }
+]

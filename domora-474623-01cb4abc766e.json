@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "domora-474623",
+  "private_key_id": "01cb4abc766e30d46edaf7466f0dfc47f71c5b58",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCzIIS7AKOy4VuL\ntdEaUTDI6hMajgqnWIoJykeBl6rjvNXekolLrF0yh/BuaeIPtTpLsoXvJKCX8Mrm\nsc0XR09yfUAAhDO74gadHLFLJEQvfi4Ct4i0PsWSbzUPgQgzhbgjUdyPwiqwvX1f\nf7SCNuUU/X3dYLsyLNaD594FoJEgSDFZVil8xjMhQE7ZeiEEDSMXs9x4c4NOmgja\ni+5sqPysUi/aUicq2FseG/sJnwltvV5iL+XhSh5buQbjAiYkfHIOdB4okgxRZqsN\nUwuvzX5Omy87uAFswrdXEpsYRUqCTH+T8aOfPorQIgURiurbGPnBZpHtbUweazSN\n13DdCYk7AgMBAAECggEAJOHPMonhKtXH+a5IDbkl6Fh58n/IpchPM9DYhFBsOVQK\nXTei2Vf2II9o6/MVPtK73BY4CZNrFZ3YyUNWzTI7o4EyimiuFkNlxTfBMY2YFIdQ\nhfKwTRyXpZ0MOdMBk0o3Ld6PIXKDQ7zgcadjzWPsKzQ+lDR0ltIwoRw+1L3I4/Jg\nt2/yuDoNMF5/1noT/W5no7oISQem+HZPJJEcO37wIykTgNUHes1hcDhTnmbR4PyU\nESArPCK66Giu5QJmF/fiGl/6rWVXynu6XtpzGBWkrhb5pBZrwiNdlz57oxDpm++n\nD2EL8HN/w6XTXbz8v4zQlRbAd2dV6V17BvKmzJrXMQKBgQDuNunaOhDWzhM2+OhB\nuutZ3wU/JCFG4K0sBPWIKuFLYw1TiCtMqJRjY2+4fbOvJMCg9KXM/GR1WpycBqrn\nEncVkotEEg/DHJADNi7KRCBM4eFjAhK7NJhsX3yaJH+0aV67ed90rMBPWdhhMHcm\njsm1Q3HlAWQZDoVWfs1+Or0KJwKBgQDAgD40xfAbb0wz0pINlc6Oop/kfWoaIH9n\nuewijjZqooZ9MzfiSlJONVisz3y0yEbSfeNoYOUSPGxgR87lodzMj+dj3ruOm2gw\nHq+oifqU9CZu3aIXC8A1vtwuYNjPfRybQX3XCxc2qNXRzFqPDd01gaYaubpA5d5s\nVgkxmF1YzQKBgQC39SwuXDz4xPdNsnYZnHF3W6S/l/UiuQrCPaom14ZYI0v9P+DA\nOEcvYXC7Nkd2b5laMtN/M0GY5rqeOv/rpfTUcfCeRpxpfjswX71OccHH3X+iZ81z\nSDCVMEAXASylc+G2QW1wup9gJ+/TTgwVeJsIIedog+R6/R23KAElA9NMbQKBgQCx\ntjK3WXx+d1MsDFtVO1WDjFJ8B+Pp1tKHmbaLeCp4ay4pax1ORTqShOEmOC5yXuoy\n7JECDWGsYifTArfYeoNyPe9p3XfdAU9ADTQxLaAt3u+ULfuztt9tPpPaJQJDGsdL\n9TwNSGnXxioPEs8PfccX3GbSCWAPBac+8HZwWK7kiQKBgQCxpRKMtCKrbfIXevvu\nPGrO7Hq/r0KxYpcg3uatT/wwxquNIU7R9ggx/7/70fsrwnV7cCLupzRID47EOluZ\nDJsrks8vBzoR3B6coj8OpTBCY2/RGIYrLP9Jmz9K2z1O+LNr4GFlIG/X82YAdTk0\nyOh3UutMi4MIz3FDOdi9QdRVaQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "domora@domora-474623.iam.gserviceaccount.com",
+  "client_id": "112120598216172630372",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/domora%40domora-474623.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
