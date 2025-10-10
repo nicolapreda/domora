@@ -21,5 +21,82 @@
     "lastName": "",
     "timestamp": "2025-10-10T00:12:18.811Z",
     "source": "landing-page"
+  },
+  {
+    "name": "Test Lead",
+    "email": "test@test.com",
+    "phone": "1234567890",
+    "challenge": "Test challenge",
+    "timePreference": "mattina",
+    "firstName": "Test",
+    "lastName": "Lead",
+    "timestamp": "2025-10-10T14:12:18.715Z",
+    "source": "landing-page"
+  },
+  {
+    "name": "Test Lead",
+    "email": "test@test.com",
+    "phone": "1234567890",
+    "challenge": "Test challenge",
+    "timePreference": "mattina",
+    "firstName": "Test",
+    "lastName": "Lead",
+    "timestamp": "2025-10-10T14:13:01.616Z",
+    "source": "landing-page"
+  },
+  {
+    "name": "Test Debug",
+    "email": "debug@test.com",
+    "phone": "+39 123 456 7890",
+    "challenge": "Test JWT problem",
+    "timePreference": "pomeriggio",
+    "firstName": "Test",
+    "lastName": "Debug",
+    "timestamp": "2025-10-10T14:22:35.208Z",
+    "source": "landing-page"
+  },
+  {
+    "name": "Test Debug",
+    "email": "debug@test.com",
+    "phone": "+39 123 456 7890",
+    "challenge": "Test JWT problem",
+    "timePreference": "pomeriggio",
+    "firstName": "Test",
+    "lastName": "Debug",
+    "timestamp": "2025-10-10T14:25:30.048Z",
+    "source": "landing-page"
+  },
+  {
+    "name": "Test Debug",
+    "email": "debug@test.com",
+    "phone": "+39 123 456 7890",
+    "challenge": "Test JWT problem",
+    "timePreference": "pomeriggio",
+    "firstName": "Test",
+    "lastName": "Debug",
+    "timestamp": "2025-10-10T14:25:43.456Z",
+    "source": "landing-page"
+  },
+  {
+    "name": "Test Debug",
+    "email": "debug@test.com",
+    "phone": "+39 123 456 7890",
+    "challenge": "Test JWT problem",
+    "timePreference": "pomeriggio",
+    "firstName": "Test",
+    "lastName": "Debug",
+    "timestamp": "2025-10-10T14:25:59.343Z",
+    "source": "landing-page"
+  },
+  {
+    "name": "Test Debug",
+    "email": "debug@test.com",
+    "phone": "+39 123 456 7890",
+    "challenge": "Test JWT problem",
+    "timePreference": "pomeriggio",
+    "firstName": "Test",
+    "lastName": "Debug",
+    "timestamp": "2025-10-10T14:26:06.531Z",
+    "source": "landing-page"
   }
 ]

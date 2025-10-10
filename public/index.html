@@ -1242,11 +1242,14 @@ src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
             updateNavbar();
             window.addEventListener('scroll', updateNavbar);
 
-            // 📊 TRACCIAMENTO META PIXEL - PAGE SCROLL
-            let pageScrollTracked = false; // Flag per evitare duplicati
+            // 📊 TRACCIAMENTO META PIXEL CON ANTI-DUPLICATI
+            let leadTracked = false; // Flag globale per evitare duplicati Lead
+            let pageScrollTracked = false; // Flag per ViewContent
+            let formEngagementTracked = false; // Flag per InitiateCheckout
             
+            // ViewContent quando arriva alla sezione contatti
             function trackPageScroll() {
-                if (pageScrollTracked) return; // Evita tracciamenti duplicati
+                if (pageScrollTracked) return;
                 
                 const contactSection = document.getElementById('contatti');
                 if (!contactSection) return;
@@ -1255,7 +1258,6 @@ src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
                 const contactSectionTop = contactSection.offsetTop;
                 const viewportHeight = window.innerHeight;
                 
-                // Traccia quando l'utente arriva al 75% della sezione contatti
                 if (scrollY + viewportHeight >= contactSectionTop + (contactSection.offsetHeight * 0.25)) {
                     try {
                         if (typeof fbq !== 'undefined') {
@@ -1263,49 +1265,50 @@ src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
                                 content_name: 'Contact Form Section',
                                 content_type: 'contact_form'
                             });
-                            console.log('📊 Meta Pixel: PageScroll alla sezione form tracciato');
-                            pageScrollTracked = true; // Marca come tracciato
-                            
-                            // Debug notification (solo in sviluppo)
-                            if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-                                console.log('🔍 DEBUG: ViewContent - Contact Form Section');
-                            }
-                            
-                            // Rimuovi il listener per evitare tracciamenti futuri
+                            console.log('📊 Meta Pixel: ViewContent tracciato');
+                            pageScrollTracked = true;
                             window.removeEventListener('scroll', trackPageScroll);
                         }
                     } catch (error) {
-                        console.error('Meta Pixel PageScroll error:', error);
+                        console.error('Meta Pixel ViewContent error:', error);
                     }
                 }
             }
             
-            // Aggiungi listener per il page scroll
-            window.addEventListener('scroll', trackPageScroll);
-
-            // 📊 TRACCIAMENTO META PIXEL - FORM ENGAGEMENT
+            // InitiateCheckout quando inizia a compilare
             function trackFormEngagement() {
-                if (formEngagementTracked) return; // Evita duplicati
+                if (formEngagementTracked) return;
                 
                 try {
                     if (typeof fbq !== 'undefined') {
                         fbq('track', 'InitiateCheckout', {
-                            content_name: 'Contact Form Started',
+                            content_name: 'Real Estate Inquiry Form',
                             content_type: 'form_engagement'
                         });
-                        console.log('📊 Meta Pixel: Form engagement tracciato');
+                        console.log('📊 Meta Pixel: InitiateCheckout tracciato');
                         formEngagementTracked = true;
+                        
+                        // Rimuovi listeners per evitare duplicati
+                        ['name', 'email', 'phone'].forEach(fieldName => {
+                            const field = document.getElementById(fieldName);
+                            if (field) {
+                                field.removeEventListener('focus', trackFormEngagement);
+                                field.removeEventListener('input', trackFormEngagement);
+                            }
+                        });
                     }
                 } catch (error) {
-                    console.error('Meta Pixel Form Engagement error:', error);
+                    console.error('Meta Pixel InitiateCheckout error:', error);
                 }
             }
             
-            // Aggiungi listeners per tracciare quando l'utente inizia a compilare
+            // Attiva listeners
+            window.addEventListener('scroll', trackPageScroll);
             ['name', 'email', 'phone'].forEach(fieldName => {
                 const field = document.getElementById(fieldName);
                 if (field) {
                     field.addEventListener('focus', trackFormEngagement, { once: true });
+                    field.addEventListener('input', trackFormEngagement, { once: true });
                 }
             });
 
@@ -1370,10 +1373,17 @@ src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
             });
 
             // Gestione form di contatto
-            let formEngagementTracked = false; // Flag per evitare duplicati
+            let formSubmitting = false; // Protezione doppio click
             
             document.getElementById('contactForm').addEventListener('submit', async function(e) {
                 e.preventDefault();
+                
+                // Protezione contro invii multipli
+                if (formSubmitting) {
+                    console.log('⚠️ Form già in invio, ignoro');
+                    return;
+                }
+                formSubmitting = true;
                 
                 const submitButton = e.target.querySelector('button[type="submit"]');
                 const originalText = submitButton.textContent;
@@ -1397,19 +1407,24 @@ src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
                     const result = await response.json();
                     
                     if (response.ok && result.success) {
-                        // 🔥 TRACCIAMENTO META PIXEL - LEAD CONVERTITO
-                        try {
-                            if (typeof fbq !== 'undefined') {
-                                fbq('track', 'Lead', {
-                                    content_name: 'Domora Contact Form',
-                                    source: 'landing_page',
-                                    value: 1,
-                                    currency: 'EUR'
-                                });
-                                console.log('📊 Meta Pixel: Lead tracciato');
+                        // 🔥 TRACCIAMENTO META PIXEL - LEAD CONVERTITO (ANTI-DUPLICATI)
+                        if (!leadTracked) { // Controlla flag globale
+                            try {
+                                if (typeof fbq !== 'undefined') {
+                                    fbq('track', 'Lead', {
+                                        content_name: 'Domora Contact Form',
+                                        source: 'landing_page',
+                                        value: 1,
+                                        currency: 'EUR'
+                                    });
+                                    console.log('📊 Meta Pixel: Lead tracciato');
+                                    leadTracked = true; // Marca come tracciato GLOBALMENTE
+                                }
+                            } catch (error) {
+                                console.error('Meta Pixel Lead error:', error);
                             }
-                        } catch (error) {
-                            console.error('Meta Pixel error:', error);
+                        } else {
+                            console.log('⚠️ Lead già tracciato, salto duplicato');
                         }
                         
                         // Successo
@@ -1430,6 +1445,7 @@ src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
                             submitButton.textContent = originalText;
                             submitButton.disabled = false;
                             submitButton.style.background = '';
+                            formSubmitting = false; // Reset flag
                         }, 3000);
                         
                     } else {
@@ -1452,6 +1468,7 @@ src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
                         submitButton.textContent = originalText;
                         submitButton.disabled = false;
                         submitButton.style.background = '';
+                        formSubmitting = false; // Reset flag anche in caso di errore
                     }, 3000);
                 }
             });

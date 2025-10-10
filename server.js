@@ -73,8 +73,12 @@ async function saveToGoogleSheets(leadData) {
       return false;
     }
 
+    console.log('🔄 Inizializzazione connessione Google Sheets...');
+    
     // Parsing delle credenziali JSON
     const credentials = JSON.parse(GOOGLE_SHEETS_CREDENTIALS);
+    console.log(`📧 Service Account: ${credentials.client_email}`);
+    console.log(`📊 Sheet ID: ${GOOGLE_SHEET_ID}`);
     
     // Autenticazione con Google Sheets API (nuovo metodo)
     const auth = new google.auth.JWT({
@@ -82,6 +86,17 @@ async function saveToGoogleSheets(leadData) {
       key: credentials.private_key,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
+
+    console.log('🔐 Autenticazione JWT configurata...');
+    
+    // Test della connessione prima di procedere
+    try {
+      await auth.authorize();
+      console.log('✅ Autenticazione JWT riuscita');
+    } catch (authError) {
+      console.error('❌ Errore autenticazione JWT:', authError.message);
+      return false;
+    }
 
     const sheets = google.sheets({ version: 'v4', auth });
 
@@ -113,6 +128,7 @@ async function saveToGoogleSheets(leadData) {
     let rangeName = 'A:G'; // Range semplice senza nome foglio (rimosso business = 7 colonne)
 
     try {
+      console.log('🔍 Verifica esistenza foglio "Leads"...');
       // Tenta prima con il foglio "Leads"
       const testRequest = {
         spreadsheetId: GOOGLE_SHEET_ID,
@@ -123,11 +139,13 @@ async function saveToGoogleSheets(leadData) {
       console.log('✅ Foglio "Leads" trovato');
     } catch (error) {
       console.log('⚠️ Foglio "Leads" non trovato, uso il primo foglio disponibile');
+      console.log('Errore dettagli:', error.message);
       rangeName = 'A:G'; // Usa il primo foglio
     }
 
     // Verifica se ci sono già intestazioni, altrimenti le crea
     try {
+      console.log('📋 Verifica intestazioni del foglio...');
       const headersRequest = {
         spreadsheetId: GOOGLE_SHEET_ID,
         range: rangeName.replace('A:G', 'A1:G1'),
@@ -135,6 +153,7 @@ async function saveToGoogleSheets(leadData) {
       const headersResponse = await sheets.spreadsheets.values.get(headersRequest);
       
       if (!headersResponse.data.values || headersResponse.data.values.length === 0) {
+        console.log('📝 Creazione intestazioni...');
         // Aggiungi intestazioni (rimosso Tipo Business)
         const headers = [
           ['Data/Ora', 'Nome', 'Email', 'Telefono', 'Sfida Principale', 'Preferenza Oraria', 'Fonte']
@@ -148,12 +167,16 @@ async function saveToGoogleSheets(leadData) {
         });
         
         console.log('✅ Intestazioni create nel foglio Google Sheets');
+      } else {
+        console.log('✅ Intestazioni già presenti');
       }
     } catch (error) {
-      console.log('⚠️ Non riesco a verificare/creare le intestazioni:', error.message);
+      console.error('❌ Errore verifica/creazione intestazioni:', error.message);
+      console.error('Dettagli completi:', error);
     }
 
     // Inserimento nel foglio Google
+    console.log('💾 Tentativo di inserimento dati nel foglio...');
     const request = {
       spreadsheetId: GOOGLE_SHEET_ID,
       range: rangeName,
@@ -164,12 +187,19 @@ async function saveToGoogleSheets(leadData) {
       },
     };
 
+    console.log('📊 Dati da inserire:', values);
     const response = await sheets.spreadsheets.values.append(request);
-    console.log('✅ Lead salvato su Google Sheets:', response.data);
+    console.log('✅ Lead salvato su Google Sheets:', response.data.updates);
     return true;
 
   } catch (error) {
     console.error('❌ Errore Google Sheets:', error.message);
+    if (error.code) {
+      console.error('Codice errore:', error.code);
+    }
+    if (error.details) {
+      console.error('Dettagli errore:', error.details);
+    }
     return false;
   }
 }
