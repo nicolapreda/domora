@@ -134,6 +134,23 @@
         <link rel="apple-touch-icon" href="./assets/Domora_Logo_Color_Vertical.png" />
         <link rel="shortcut icon" href="./assets/Domora_Logo_Color_Vertical.png" type="image/png" />
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1303036511295480');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1303036511295480&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1GB7NZ331"></script>
@@ -1225,6 +1242,73 @@
             updateNavbar();
             window.addEventListener('scroll', updateNavbar);
 
+            // 📊 TRACCIAMENTO META PIXEL - PAGE SCROLL
+            let pageScrollTracked = false; // Flag per evitare duplicati
+            
+            function trackPageScroll() {
+                if (pageScrollTracked) return; // Evita tracciamenti duplicati
+                
+                const contactSection = document.getElementById('contatti');
+                if (!contactSection) return;
+                
+                const scrollY = window.scrollY;
+                const contactSectionTop = contactSection.offsetTop;
+                const viewportHeight = window.innerHeight;
+                
+                // Traccia quando l'utente arriva al 75% della sezione contatti
+                if (scrollY + viewportHeight >= contactSectionTop + (contactSection.offsetHeight * 0.25)) {
+                    try {
+                        if (typeof fbq !== 'undefined') {
+                            fbq('track', 'ViewContent', {
+                                content_name: 'Contact Form Section',
+                                content_type: 'contact_form'
+                            });
+                            console.log('📊 Meta Pixel: PageScroll alla sezione form tracciato');
+                            pageScrollTracked = true; // Marca come tracciato
+                            
+                            // Debug notification (solo in sviluppo)
+                            if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+                                console.log('🔍 DEBUG: ViewContent - Contact Form Section');
+                            }
+                            
+                            // Rimuovi il listener per evitare tracciamenti futuri
+                            window.removeEventListener('scroll', trackPageScroll);
+                        }
+                    } catch (error) {
+                        console.error('Meta Pixel PageScroll error:', error);
+                    }
+                }
+            }
+            
+            // Aggiungi listener per il page scroll
+            window.addEventListener('scroll', trackPageScroll);
+
+            // 📊 TRACCIAMENTO META PIXEL - FORM ENGAGEMENT
+            function trackFormEngagement() {
+                if (formEngagementTracked) return; // Evita duplicati
+                
+                try {
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'InitiateCheckout', {
+                            content_name: 'Contact Form Started',
+                            content_type: 'form_engagement'
+                        });
+                        console.log('📊 Meta Pixel: Form engagement tracciato');
+                        formEngagementTracked = true;
+                    }
+                } catch (error) {
+                    console.error('Meta Pixel Form Engagement error:', error);
+                }
+            }
+            
+            // Aggiungi listeners per tracciare quando l'utente inizia a compilare
+            ['name', 'email', 'phone'].forEach(fieldName => {
+                const field = document.getElementById(fieldName);
+                if (field) {
+                    field.addEventListener('focus', trackFormEngagement, { once: true });
+                }
+            });
+
             // Funzioni per il popup di feedback
             function showPopup(type, title, message) {
                 const popup = document.getElementById('feedbackPopup');
@@ -1286,6 +1370,8 @@
             });
 
             // Gestione form di contatto
+            let formEngagementTracked = false; // Flag per evitare duplicati
+            
             document.getElementById('contactForm').addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
@@ -1311,6 +1397,21 @@
                     const result = await response.json();
                     
                     if (response.ok && result.success) {
+                        // 🔥 TRACCIAMENTO META PIXEL - LEAD CONVERTITO
+                        try {
+                            if (typeof fbq !== 'undefined') {
+                                fbq('track', 'Lead', {
+                                    content_name: 'Domora Contact Form',
+                                    source: 'landing_page',
+                                    value: 1,
+                                    currency: 'EUR'
+                                });
+                                console.log('📊 Meta Pixel: Lead tracciato');
+                            }
+                        } catch (error) {
+                            console.error('Meta Pixel error:', error);
+                        }
+                        
                         // Successo
                         submitButton.textContent = '✅ INVIATO!';
                         submitButton.style.background = 'linear-gradient(to right, #10b981, #059669)';
